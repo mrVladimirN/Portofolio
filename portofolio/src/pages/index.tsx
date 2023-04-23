@@ -44,7 +44,7 @@ export default function Home() {
                   {/* <ExternalLinkIcon className={"w-6 ml-1"}/> */}
                 </Link>
                 <Link
-                  href="vladimir.nitu.business@outlook.com"
+                  href="mailto:vladimir.nitu.business@outlook.com"
                   target={"_blank"}
                   className="ml-4 text-lg font-medium capitalize text-dark underline"
                 >
