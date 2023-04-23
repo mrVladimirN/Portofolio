@@ -6,6 +6,8 @@ import profilePic from "../../public/Vladimir_Black.png";
 import Image from "next/image";
 import { AnimatedNumbers } from "@/components/AnimatedNumbers";
 import { Skills } from "@/components/Skills";
+import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
 const about = () => {
   return (
     <>
@@ -75,8 +77,11 @@ const about = () => {
                 <h2 className="text-xl font-medium capitalize text-dark/75"> </h2>
               </div>
             </div>
+
           </div>
           <Skills/>
+          <Experience/>
+          <Education/>
         </Layout>
       </main>
     </>
