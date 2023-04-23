@@ -5,6 +5,7 @@ import AI_Image from "../../public/AI_Image.png";
 import { AnimatedText } from "@/components/AnimatedText";
 import Link from "next/link";
 import { ExternalLinkIcon } from "@/components/Icons";
+import { Skills } from "@/components/Skills";
 export default function Home() {
   return (
     <>
