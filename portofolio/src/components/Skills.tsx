@@ -39,8 +39,6 @@ export const Skills = () => {
         <Skill name="React" x="-23vw" y="0vw"></Skill>
         <Skill name="Github" x="17vw" y="13vw"></Skill>
         <Skill name="Docker" x="-17vw" y="-13vw"></Skill>
-        {/* <Skill name="Docker" x="5vw" y="13vw"></Skill> */}
-
       </div>
     </>
   );
