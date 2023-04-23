@@ -26,15 +26,9 @@ const about = () => {
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
                 Biography
               </h2>
-              <p className="font-medium">
-        
-              </p>
-              <p className=" my-4 font-medium">
-            
-              </p>
-              <p className="font-medium">
-                
-              </p>
+              <p className="font-medium"></p>
+              <p className="my-4 font-medium"></p>
+              <p className="font-medium"></p>
             </div>
             <div
               className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
@@ -52,26 +46,31 @@ const about = () => {
             <div className="col-span-2 flex flex-col items-end justify-between">
               <div className="flex flex-col items-center  justify-center">
                 <span className="inline-block text-7xl font-bold">
-                  <AnimatedNumbers value={new Date().getFullYear() - 2018}/> +
+                  <AnimatedNumbers value={new Date().getFullYear() - 2018} /> +
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75">Years of experience as a Software Engineer</h2>
+                <h2 className="text-xl font-medium capitalize text-dark/75">
+                  Years of experience as a Software Engineer
+                </h2>
               </div>
               <div className="flex flex-col items-center  justify-center">
                 <span className="inline-block text-7xl font-bold">
-                <AnimatedNumbers value={new Date().getFullYear() - 2021}/> +
+                  <AnimatedNumbers value={new Date().getFullYear() - 2021} /> +
                 </span>
-                <h2 className="text-xl font-medium capitalize text-dark/75">Years of experience as a Backend Developer</h2>
+                <h2 className="text-xl font-medium capitalize text-dark/75">
+                  Years of experience as a Backend Developer
+                </h2>
               </div>
               <div className="flex flex-col items-center  justify-center">
                 <span className="inline-block text-7xl font-bold"></span>
-                <h2 className="text-xl font-medium capitalize text-dark/75"> </h2>
+                <h2 className="text-xl font-medium capitalize text-dark/75">
+                  {" "}
+                </h2>
               </div>
             </div>
-
           </div>
-          <Skills/>
-          <Experience/>
-          <Education/>
+          <Skills />
+          <Experience />
+          <Education />
         </Layout>
       </main>
     </>
