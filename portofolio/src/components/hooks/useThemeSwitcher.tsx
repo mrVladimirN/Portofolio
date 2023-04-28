@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 export const useThemeSwitcher = () => {
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<any>("light");
 
   useEffect(() => {
     // Get theme preference from localStorage or set it to "light" by default
