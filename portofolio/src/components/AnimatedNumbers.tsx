@@ -15,7 +15,6 @@ export const AnimatedNumbers: React.FC<IAnimatedNumbers> = ({ value }) => {
   }, [isInView, value, motionValue]);
   useEffect(() => {
     springValue.on("change", (latest) => {
-        console.log(latest)
       if (ref.current && latest.toFixed(0) <= value) {
         ref.current.textContent = latest.toFixed(0);
 

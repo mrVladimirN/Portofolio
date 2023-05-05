@@ -16,11 +16,11 @@ const about = () => {
         <title>About Vladimir</title>
         <meta name="description" content="about vladimir"></meta>
       </Head>
-      <TransitionEffect/>
+      <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
           <AnimatedText
-            text="Passion Fuels Purpose!"
+            text="Hi, I'm Vladimir"
             className="mb-16 kg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           ></AnimatedText>
           <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
@@ -28,9 +28,12 @@ const about = () => {
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
                 Biography
               </h2>
-              <p className="font-medium ">csaaaaaaaaaaaaaaaaa</p>
-              <p className="my-4 font-medium">caaaaaaaaaaaaaaaaaaaaaa</p>
-              <p className="font-medium">csaaaaaaaaaaaa</p>
+              <p className="font-medium ">
+                I am a backend developer  with {new Date().getFullYear() - 2021}+ years of experience
+in the field based in Timisoara.
+              </p>
+              <p className="my-4 font-medium">My number 1 priority is to implement clean, fast and readable code for the companies that I have been working with.</p>
+              <p className="font-medium">Since software engineering is about learning and experimenting continuously, I want to use this site as a journal about the new concepts that I learn.</p>
             </div>
             <div
               className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark

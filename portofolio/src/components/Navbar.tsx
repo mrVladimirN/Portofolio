@@ -101,7 +101,6 @@ export const NavBar = () => {
           <nav>
             <CustomLink href="/" title="Home" className="mr-4" />
             <CustomLink href="/about" title="About" className="mr-4" />
-            {/* <CustomLink href="/articles" title="Articles" className="mr-4" /> */}
           </nav>
           <nav className="flex items-center justify-center flex-wrap">
             <motion.a
@@ -162,25 +161,32 @@ export const NavBar = () => {
               onClick={setMode}
               className="ml-3 flex items-center justify-center rounded-full p-1 "
             >
-              <motion.a
-                target={"_blank"}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="w-6 mx-3"
-              >
-                {mode === "dark" ? (
-                  <SunIcon className={"fill-dark"} />
-                ) : (
-                  <DarkMoonIcon className={"fill-dark"} />
-                )}
-              </motion.a>
+              {mode === "dark" ? (
+                <motion.a
+                  target={"_blank"}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-6 mx-3"
+                >
+                  <SunIcon/>
+                </motion.a>
+              ) : (
+                <motion.a
+                  target={"_blank"}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-6 mx-3"
+                >
+                  <DarkMoonIcon  />
+                </motion.a>
+              )}
             </button>
           </nav>
         </div>
 
         {isOpen ? (
           <motion.div
-            initial={{ scale: 0, opacity: 0 ,x:"-50%", y:"-50%"}}
+            initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
             animate={{ scale: 1, opacity: 1 }}
             className="min-w-[70vw] flex flex-col justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
     bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32
@@ -266,9 +272,9 @@ export const NavBar = () => {
                   className="w-6 mx-3"
                 >
                   {mode === "dark" ? (
-                    <SunIcon className={"fill-dark"} />
+                    <SunIcon/>
                   ) : (
-                    <DarkMoonIcon className={"fill-dark"} />
+                    <DarkMoonIcon />
                   )}
                 </motion.a>
               </button>

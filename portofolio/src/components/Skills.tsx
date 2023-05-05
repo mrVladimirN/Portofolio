@@ -38,17 +38,18 @@ export const Skills = () => {
         >
           Web
         </motion.div>
-        <Skill name="MongoDB" x="-15vw" y="-2vw"></Skill>
-        <Skill name="Node" x="0vw" y="-10vw"></Skill>
+        <Skill name="MongoDB" x="-17vw" y="-7vw"></Skill>
+        <Skill name="Node" x="0vw" y="-12vw"></Skill>
         <Skill name="Typescript" x="18vw" y="7vw"></Skill>
         <Skill name="Javascript" x="-18vw" y="7vw"></Skill>
         <Skill name="SQL" x="15vw" y="-2vw"></Skill>
         <Skill name="HTML" x="0vw" y="20vw"></Skill>
         <Skill name="CSS" x="0vw" y="-20vw"></Skill>
         <Skill name="Angular" x="30vw" y="0vw"></Skill>
-        <Skill name="React" x="-30vw" y="0vw"></Skill>
+        <Skill name="React" x="-32vw" y="0vw"></Skill>
         <Skill name="Github" x="17vw" y="20vw"></Skill>
         <Skill name="Docker" x="-17vw" y="-20vw"></Skill>
+        <Skill name="Kafka" x="-30vw" y="20vw"></Skill>
       </div>
     </>
   );
