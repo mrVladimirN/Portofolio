@@ -101,6 +101,7 @@ export const NavBar = () => {
           <nav>
             <CustomLink href="/" title="Home" className="mr-4" />
             <CustomLink href="/about" title="About" className="mr-4" />
+            <CustomLink href="/newsletter" title="Newsletter" className="mr-4" />
           </nav>
           <nav className="flex items-center justify-center flex-wrap">
             <motion.a

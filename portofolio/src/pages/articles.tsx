@@ -2,19 +2,19 @@ import { AnimatedText } from "@/components/AnimatedText";
 import { Layout } from "@/components/Layout";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import AI_Image from "../../public/AI_Image.png";
 import { motion, useMotionValue } from "framer-motion";
 import { useRef } from "react";
 interface IArticle {
-  img: any;
+  img: string | StaticImageData;
   title: string;
   time: string;
   summary?: string;
   link: string;
 }
 interface IMovingImage {
-  img: any;
+  img: string | StaticImageData;
   title: string;
   link: string;
 }
@@ -22,7 +22,7 @@ const FramerImage = motion(Image);
 const MovingImg: React.FC<IMovingImage> = ({ img, title, link }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const imgRef: any = useRef(null);
+  const imgRef = useRef<HTMLInputElement>(null);
 
   const handleMouse = (event: { pageX: number }) => {
     if (imgRef && imgRef.current) {
@@ -105,7 +105,7 @@ const Article: React.FC<IArticle> = ({ img, title, time, link }) => {
       viewport={{ once: true }}
       className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4"
     >
-      <MovingImg title={title} img={img} link={link} />
+      <MovingImg title={title} img={img as string} link={link} />
       <span className="text-primary font-semibold pl-4">{time}</span>
     </motion.li>
   );

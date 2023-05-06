@@ -15,8 +15,7 @@ export const Footer = () => {
           </a>
         </div>
         <Link
-          href="/"
-          target={"_blank"}
+          href="/newsletter"
           className="underline underline-offset-2"
         >
           NewsLetter
