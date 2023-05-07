@@ -45,7 +45,7 @@ export const NewsLetterForm = () => {
           </div>
 
           <div className="flex justify-center  mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="w-6/12 bg-white  py-8 px-6 shadow rounded-lg sm:px-10">
+            <div className="w-full bg-white  py-8 px-6 shadow rounded-lg sm:px-10">
               <form className="mb-0 space-y-6 " onSubmit={submitHandler}>
                 <div>
                   <label
