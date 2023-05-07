@@ -16,7 +16,7 @@ const about = () => {
         <title>About Vladimir</title>
         <meta name="description" content="about vladimir"></meta>
       </Head>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
           <AnimatedText

@@ -9,7 +9,7 @@ const newsLetter = () => {
         <title>Newsletter</title>
         <meta name="description" content="Newsletter"></meta>
       </Head>
-      <TransitionEffect/>
+      {/* <TransitionEffect/> */}
       <Layout className="pt-16">
         <NewsLetterForm></NewsLetterForm>
       </Layout>

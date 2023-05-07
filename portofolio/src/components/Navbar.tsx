@@ -206,6 +206,12 @@ export const NavBar = () => {
                 className=" "
                 toggle={handleClick}
               />
+               <CustomMobileLink
+                href="/newsletter"
+                title="Newsletter"
+                className=" "
+                toggle={handleClick}
+              />
             </nav>
             <nav className="flex items-center justify-center flex-wrap mt-2">
               <motion.a
