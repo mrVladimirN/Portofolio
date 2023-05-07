@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 
 const errorPage = () => {
@@ -14,8 +15,8 @@ const errorPage = () => {
         <h3 className="text-3xl dark:text-light xl:!text-2xl lg:!text-xl md:!text-lg  sm:!text-md">Page not found</h3>
         <p className="text-3xl dark:text-light xl:!text-2xl lg:!text-xl md:!text-lg  sm:!text-sm"> The URL of the page was not found. Please try again</p>
         <div className="flex space-x-2">
-            <a href="/" className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
-                  border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light md:p-2 md:px-4 md:text-base">Go Home</a>
+            <Link href="/" className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
+                  border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light md:p-2 md:px-4 md:text-base">Go Home</Link>
         </div>
       </div>
     </>

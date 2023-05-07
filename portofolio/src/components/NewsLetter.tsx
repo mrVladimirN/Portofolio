@@ -1,5 +1,6 @@
+
 import React, { useRef, useState } from "react";
-export interface FormData {
+export interface NewsLetter {
   name: string;
   email: string;
 }
@@ -7,23 +8,31 @@ export const NewsLetterForm = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
-  function submitHandler(event: React.FormEvent<HTMLFormElement>) {
+  async function submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const enteredEmail: string =
       emailRef && emailRef.current ? emailRef.current.value : "";
     const enteredName: string =
       nameRef && nameRef.current ? nameRef.current.value : "";
-    const payload: FormData = {
+    const payload: NewsLetter = {
       email: enteredEmail,
       name: enteredName,
     };
     setSubmitted(true);
+    const response = await fetch('/api/firebase-write', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+     await response.json();
   }
   return (
     <>
       {submitted ? (
         <div className="mt-6 text-center text-6xl dark:text-light xl:!text-5xl lg:!text-6xl md:!text-5xl sm:!text-3xl">
-          Thank you for subscribing! We'll keep you updated with the latest news
+          Thank you for subscribing! I will keep you updated with the latest news
           and tips.
         </div>
       ) : (
