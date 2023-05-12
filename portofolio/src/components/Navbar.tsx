@@ -15,13 +15,13 @@ import {
 import { motion } from "framer-motion";
 import { useThemeSwitcher } from "./hooks/useThemeSwitcher";
 
-interface ICustomLink {
+interface CustomLinkType {
   href: string;
   title: string;
   className?: string;
   toggle?: () => void; //for mobile
 }
-const CustomLink: React.FC<ICustomLink> = ({ href, title, className = "" }) => {
+const CustomLink = ({ href, title, className = "" }: CustomLinkType) => {
   const router = useRouter();
   return (
     <Link href={href} className={`${className} relative group`}>
@@ -37,12 +37,12 @@ const CustomLink: React.FC<ICustomLink> = ({ href, title, className = "" }) => {
     </Link>
   );
 };
-const CustomMobileLink: React.FC<ICustomLink> = ({
+const CustomMobileLink = ({
   href,
   title,
   className = "",
   toggle,
-}) => {
+}: CustomLinkType) => {
   const router = useRouter();
   const handleClick = () => {
     if (toggle) {
@@ -70,7 +70,6 @@ const CustomMobileLink: React.FC<ICustomLink> = ({
 export const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
-
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -101,7 +100,11 @@ export const NavBar = () => {
           <nav>
             <CustomLink href="/" title="Home" className="mr-4" />
             <CustomLink href="/about" title="About" className="mr-4" />
-            <CustomLink href="/newsletter" title="Newsletter" className="mr-4" />
+            <CustomLink
+              href="/newsletter"
+              title="Newsletter"
+              className="mr-4"
+            />
           </nav>
           <nav className="flex items-center justify-center flex-wrap">
             <motion.a
@@ -111,7 +114,7 @@ export const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <TwitterIcon />
+              <TwitterIcon theme={mode} mobile={false}/>
             </motion.a>
             <motion.a
               href="/"
@@ -120,7 +123,7 @@ export const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <GitHubIcon />
+              <GitHubIcon theme={mode} mobile={false}/>
             </motion.a>
             <motion.a
               href="/"
@@ -129,7 +132,7 @@ export const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <LinkedinIcon />
+              <LinkedinIcon theme={mode} mobile={false}/>
             </motion.a>
             <motion.a
               href="/"
@@ -138,7 +141,7 @@ export const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <YoutubeIcon />
+              <YoutubeIcon theme={mode} mobile={false}/>
             </motion.a>
             <motion.a
               href="/"
@@ -147,7 +150,7 @@ export const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <TikTokIcon />
+              <TikTokIcon theme={mode} mobile={false}/>
             </motion.a>
             <motion.a
               href="/"
@@ -156,7 +159,7 @@ export const NavBar = () => {
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
-              <MediumIcon />
+              <MediumIcon theme={mode} mobile={false}/>
             </motion.a>
             <button
               onClick={setMode}
@@ -169,7 +172,7 @@ export const NavBar = () => {
                   whileTap={{ scale: 0.9 }}
                   className="w-6 mx-3"
                 >
-                  <SunIcon/>
+                  <SunIcon />
                 </motion.a>
               ) : (
                 <motion.a
@@ -178,7 +181,7 @@ export const NavBar = () => {
                   whileTap={{ scale: 0.9 }}
                   className="w-6 mx-3"
                 >
-                  <DarkMoonIcon  />
+                  <DarkMoonIcon />
                 </motion.a>
               )}
             </button>
@@ -193,7 +196,7 @@ export const NavBar = () => {
     bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32
     "
           >
-            <nav className="flex items-center flex-col justify-center">
+            <nav className="flex items-center flex-col justify-center  mt-[-5vw]">
               <CustomMobileLink
                 href="/"
                 title="Home"
@@ -206,14 +209,14 @@ export const NavBar = () => {
                 className=" "
                 toggle={handleClick}
               />
-               <CustomMobileLink
+              <CustomMobileLink
                 href="/newsletter"
                 title="Newsletter"
                 className=" "
                 toggle={handleClick}
               />
             </nav>
-            <nav className="flex items-center justify-center flex-wrap mt-2">
+            <nav className="flex items-center justify-center flex-wrap mt-[10vw]">
               <motion.a
                 href="/"
                 target={"_blank"}
@@ -221,7 +224,7 @@ export const NavBar = () => {
                 whileTap={{ scale: 0.9 }}
                 className="w-6 mx-3 sm:mx-1"
               >
-                <TwitterIcon />
+                <TwitterIcon theme={mode} mobile={true} />
               </motion.a>
               <motion.a
                 href="/"
@@ -230,7 +233,7 @@ export const NavBar = () => {
                 whileTap={{ scale: 0.9 }}
                 className="w-6 mx-3 sm:mx-1"
               >
-                <GitHubIcon />
+                <GitHubIcon theme={mode} mobile={true}/>
               </motion.a>
               <motion.a
                 href="/"
@@ -239,7 +242,7 @@ export const NavBar = () => {
                 whileTap={{ scale: 0.9 }}
                 className="w-6 mx-3 sm:mx-1"
               >
-                <LinkedinIcon />
+                <LinkedinIcon theme={mode} mobile={true}/>
               </motion.a>
               <motion.a
                 href="/"
@@ -248,7 +251,7 @@ export const NavBar = () => {
                 whileTap={{ scale: 0.9 }}
                 className="w-6 mx-3 sm:mx-1"
               >
-                <YoutubeIcon />
+                <YoutubeIcon theme={mode} mobile={true}/>
               </motion.a>
               <motion.a
                 href="/"
@@ -257,7 +260,7 @@ export const NavBar = () => {
                 whileTap={{ scale: 0.9 }}
                 className="w-6 mx-3 sm:mx-1"
               >
-                <TikTokIcon />
+                <TikTokIcon theme={mode} mobile={true}/>
               </motion.a>
               <motion.a
                 href="/"
@@ -266,7 +269,7 @@ export const NavBar = () => {
                 whileTap={{ scale: 0.9 }}
                 className="w-6 mx-3 sm:mx-1"
               >
-                <MediumIcon />
+                <MediumIcon theme={mode} mobile={true}/>
               </motion.a>
               <button
                 onClick={setMode}
@@ -278,11 +281,7 @@ export const NavBar = () => {
                   whileTap={{ scale: 0.9 }}
                   className="w-6 mx-3"
                 >
-                  {mode === "dark" ? (
-                    <SunIcon/>
-                  ) : (
-                    <DarkMoonIcon />
-                  )}
+                  {mode === "dark" ? <SunIcon /> : <DarkMoonIcon />}
                 </motion.a>
               </button>
             </nav>

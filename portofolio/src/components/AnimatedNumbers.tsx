@@ -1,9 +1,9 @@
 import { MutableRefObject, useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-interface IAnimatedNumbers {
+interface AnimatedNumbersType {
     value:number
 }
-export const AnimatedNumbers: React.FC<IAnimatedNumbers> = ({ value }) => {
+export const AnimatedNumbers = ({ value }:AnimatedNumbersType) => {
   const ref = useRef<any>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { duration: 2000 });

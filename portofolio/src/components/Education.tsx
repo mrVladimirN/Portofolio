@@ -2,21 +2,20 @@ import React, { useRef } from "react";
 import { AnimatedText } from "./AnimatedText";
 import { motion, useScroll } from "framer-motion";
 import { LiIcon } from "./Licon";
-import { IDetails } from "./Experience";
-interface IDetailsEducation {
+interface DetailsEducationType {
   type: string;
   time: string;
   info?: string;
   grade?: string;
   place: string;
 }
-export const DetailsEducation: React.FC<IDetailsEducation> = ({
+export const DetailsEducation = ({
   type,
   time,
   info,
   place,
   grade,
-}) => {
+}:DetailsEducationType) => {
   const ref = useRef(null);
   return (
     <li

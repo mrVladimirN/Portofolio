@@ -6,20 +6,20 @@ import Image, { StaticImageData } from "next/image";
 import AI_Image from "../../public/AI_Image.png";
 import { motion, useMotionValue } from "framer-motion";
 import { useRef } from "react";
-interface IArticle {
+interface ArticleType {
   img: string | StaticImageData;
   title: string;
   time: string;
   summary?: string;
   link: string;
 }
-interface IMovingImage {
+interface MovingImageType {
   img: string | StaticImageData;
   title: string;
   link: string;
 }
 const FramerImage = motion(Image);
-const MovingImg: React.FC<IMovingImage> = ({ img, title, link }) => {
+const MovingImg  = ({ img, title, link }:MovingImageType) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const imgRef = useRef<HTMLInputElement>(null);
@@ -64,13 +64,13 @@ const MovingImg: React.FC<IMovingImage> = ({ img, title, link }) => {
   );
 };
 
-const FeaturedArticle: React.FC<IArticle> = ({
+const FeaturedArticle  = ({
   img,
   title,
   time,
   summary,
   link,
-}) => {
+}:ArticleType) => {
   return (
     <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2-xl">
       <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl" />
@@ -97,7 +97,7 @@ const FeaturedArticle: React.FC<IArticle> = ({
     </li>
   );
 };
-const Article: React.FC<IArticle> = ({ img, title, time, link }) => {
+const Article  = ({ img, title, time, link }: ArticleType) => {
   return (
     <motion.li
       initial={{ y: 200 }}

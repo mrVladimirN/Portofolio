@@ -9,7 +9,7 @@ const quote: Variants = {
     opacity: 1,
     transition: {
       delay: 0.5,
-      staggerChildren:0.08
+      staggerChildren: 0.08,
     },
   },
 };
@@ -26,14 +26,11 @@ const singleWord: Variants = {
     },
   },
 };
-export interface IAnimatedText {
+export interface AnimatedTextType {
   text: string;
   className?: string;
 }
-export const AnimatedText: React.FC<IAnimatedText> = ({
-  text,
-  className = "",
-}) => {
+export const AnimatedText = ({ text, className = "" }: AnimatedTextType) => {
   return (
     <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden sm:py-0">
       <motion.h1

@@ -4,7 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import { LiIcon } from "./Licon";
 import { DetailsEducation } from "./Education";
 
-export interface IDetails {
+export interface DetailsExperienceType {
   position?: string;
   company?: string;
   companyLink?: string;
@@ -13,14 +13,14 @@ export interface IDetails {
   grade?: string;
   skills?: string;
 }
-export const DetailsExperience: React.FC<IDetails> = ({
+export const DetailsExperience = ({
   position,
   company,
   companyLink,
   time,
   work,
   skills,
-}) => {
+}:DetailsExperienceType) => {
   const ref = useRef(null);
   return (
     <li

@@ -1,9 +1,11 @@
 import * as React from "react";
-interface Icons {
+export interface Icons {
   props?: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>;
   className?: string;
+  theme?: "light" | "dark";
+  mobile?: boolean;
 }
-export const TwitterIcon: React.FC<Icons> = ({ props, className }) => (
+export const TwitterIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
@@ -30,7 +32,7 @@ export const TwitterIcon: React.FC<Icons> = ({ props, className }) => (
   </svg>
 );
 
-export const GitHubIcon: React.FC<Icons> = ({ props, className }) => (
+export const GitHubIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
@@ -38,16 +40,23 @@ export const GitHubIcon: React.FC<Icons> = ({ props, className }) => (
     viewBox="0 0 48 48"
     {...props}
     className={className}
+    {...(theme === "light" && !mobile
+      ? {}
+      : theme === "light" && mobile
+      ? { fill: "white" }
+      : theme === "dark" && !mobile
+      ? { fill: "white" }
+      : {})}
   >
     <path d="M17.791 46.836A1.999 1.999 0 0 0 19 45v-5.4c0-.197.016-.402.041-.61A.611.611 0 0 1 19 39h-3.6c-1.5 0-2.8-.6-3.4-1.8-.7-1.3-1-3.5-2.8-4.7-.3-.2-.1-.5.5-.5.6.1 1.9.9 2.7 2 .9 1.1 1.8 2 3.4 2 2.487 0 3.82-.125 4.622-.555C21.356 34.056 22.649 33 24 33v-.025c-5.668-.182-9.289-2.066-10.975-4.975-3.665.042-6.856.405-8.677.707a21.537 21.537 0 0 1-.151-.987c1.797-.296 4.843-.647 8.345-.714a8.162 8.162 0 0 1-.291-.849c-3.511-.178-6.541-.039-8.187.097-.02-.332-.047-.663-.051-.999 1.649-.135 4.597-.27 8.018-.111a9.832 9.832 0 0 1-.13-1.543c0-1.7.6-3.5 1.7-5-.5-1.7-1.2-5.3.2-6.6 2.7 0 4.6 1.3 5.5 2.1C21 13.4 22.9 13 25 13s4 .4 5.6 1.1c.9-.8 2.8-2.1 5.5-2.1 1.5 1.4.7 5 .2 6.6 1.1 1.5 1.7 3.2 1.6 5 0 .484-.045.951-.11 1.409 3.499-.172 6.527-.034 8.204.102-.002.337-.033.666-.051.999-1.671-.138-4.775-.28-8.359-.089a8.272 8.272 0 0 1-.325.98c3.546.046 6.665.389 8.548.689-.043.332-.093.661-.151.987-1.912-.306-5.171-.664-8.879-.682-1.665 2.878-5.22 4.755-10.777 4.974V33c2.6 0 5 3.9 5 6.6V45c0 .823.498 1.53 1.209 1.836C41.37 43.804 48 35.164 48 25 48 12.318 37.683 2 25 2S2 12.318 2 25c0 10.164 6.63 18.804 15.791 21.836z" />
   </svg>
 );
 
-export const LinkedinIcon: React.FC<Icons> = ({ props, className }) => (
+export const LinkedinIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={30}
-    height={30}
+    width={35}
+    height={35}
     viewBox="0 0 48 48"
     {...props}
     className={className}
@@ -71,7 +80,7 @@ export const LinkedinIcon: React.FC<Icons> = ({ props, className }) => (
   </svg>
 );
 
-export const TikTokIcon: React.FC<Icons> = ({ props, className }) => (
+export const TikTokIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
@@ -79,19 +88,26 @@ export const TikTokIcon: React.FC<Icons> = ({ props, className }) => (
     viewBox="0 0 48 48"
     {...props}
     className={className}
+    {...(theme === "light" && !mobile
+    ? {}
+    : theme === "light" && mobile
+    ? { fill: "white" }
+    : theme === "dark" && !mobile
+    ? { fill: "white" }
+    : {})}
   >
     <path d="M41 4H9C6.243 4 4 6.243 4 9v32c0 2.757 2.243 5 5 5h32c2.757 0 5-2.243 5-5V9c0-2.757-2.243-5-5-5zm-3.994 18.323a7.482 7.482 0 0 1-.69.035 7.492 7.492 0 0 1-6.269-3.388v11.537a8.527 8.527 0 1 1-8.527-8.527c.178 0 .352.016.527.027v4.202c-.175-.021-.347-.053-.527-.053a4.351 4.351 0 1 0 0 8.704c2.404 0 4.527-1.894 4.527-4.298l.042-19.594h4.016a7.488 7.488 0 0 0 6.901 6.685v4.67z" />
   </svg>
 );
 
-export const YoutubeIcon: React.FC<Icons> = ({ props, className }) => (
+export const YoutubeIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
     height={30}
     viewBox="0 0 48 48"
     {...props}
-    className={`w-full h-auto ${className}`}
+    className={className}
   >
     <path
       fill="#ef4823"
@@ -112,44 +128,39 @@ export const YoutubeIcon: React.FC<Icons> = ({ props, className }) => (
   </svg>
 );
 
-export const ExternalLinkIcon: React.FC<Icons> = ({ props, className }) => (
+export const ExternalLinkIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
     height={24}
     {...props}
-    className={`w-full h-auto ${className}`}
+    className={className}
   >
     <path d="M3 3v18h18v-9h-2v7H5V5h7V3H3zm11 0v2h3.586l-9.293 9.293 1.414 1.414L19 6.414V10h2V3h-7z" />
   </svg>
 );
 
-export const MediumIcon: React.FC<Icons> = ({ props, className }) => (
+export const MediumIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
     height={30}
     viewBox="0 0 48 48"
+   
     {...props}
-    className={`w-full h-auto ${className}`}
+    className={className}
+    {...(theme === "light" && !mobile
+    ? {}
+    : theme === "light" && mobile
+    ? { fill: "white" }
+    : theme === "dark" && !mobile
+    ? { fill: "white" }
+    : {})}
   >
-    <path
-      fill="none"
-      fillOpacity={0}
-      strokeMiterlimit={10}
-      d="M3 3v18h18v-9h-2v7H5V5h7V3zm11 0v2h3.586l-9.293 9.293 1.414 1.414L19 6.414V10h2V3z"
-      fontFamily="none"
-      fontSize="none"
-      fontWeight="none"
-      style={{
-        mixBlendMode: "normal",
-      }}
-      textAnchor="none"
-      transform="scale(10.66667)"
-    />
+     <path d="M45 4H5a1 1 0 0 0-1 1v40a1 1 0 0 0 1 1h40a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-5 9.5-1.821 2.197a.603.603 0 0 0-.179.428V32.75c0 .16.064.314.179.428L40 35.546V36H30v-.454l2.821-2.368A.603.603 0 0 0 33 32.75V17.879L24.848 36H23.304L15 18.375v13.108c0 .22.076.433.215.605L18 35.546V36h-8v-.454l2.783-3.438A.964.964 0 0 0 13 31.5V16.388a.6.6 0 0 0-.142-.388L11 13.5V13h7.097l7.624 16.183L33.002 13H40v.5z" />
   </svg>
 );
-export const DarkMoonIcon: React.FC<Icons> = ({ props, className }) => (
+export const DarkMoonIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
@@ -159,7 +170,7 @@ export const DarkMoonIcon: React.FC<Icons> = ({ props, className }) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth={1.5}
-    className={`w-full h-auto ${className}`}
+    className={className}
     viewBox="0 0 24 24"
     {...props}
   >
@@ -168,7 +179,7 @@ export const DarkMoonIcon: React.FC<Icons> = ({ props, className }) => (
   </svg>
 );
 
-export const SunIcon: React.FC<Icons> = ({ props, className }) => (
+export const SunIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={30}
@@ -178,7 +189,7 @@ export const SunIcon: React.FC<Icons> = ({ props, className }) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth={1.5}
-    className={`w-full h-auto ${className}`}
+    className={className}
     viewBox="0 0 24 24"
     {...props}
   >
