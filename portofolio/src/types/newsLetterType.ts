@@ -4,3 +4,8 @@ export interface NewsLetter {
 }
 
 export type ExtendedNewsLetter = NewsLetter & { uuid: string };
+
+export interface UnsubscribeNewsLetter {
+  uuid: string;
+  email: string;
+}

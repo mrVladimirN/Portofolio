@@ -18,7 +18,7 @@ export const Footer = () => {
           href="/newsletter"
           className="underline underline-offset-2"
         >
-          NewsLetter
+          Newsletter
         </Link>
       </Layout>
     </footer>

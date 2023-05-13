@@ -2,7 +2,8 @@ import { createUser } from "@/firebase/CRUD/addUser";
 import * as uuid from "uuid";
 import { NextApiRequest, NextApiResponse } from "next";
 import { ExtendedNewsLetter, NewsLetter } from "@/types/newsLetterType";
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+import { sendSubscriptionEmail } from "@/mail/mail";
+async function handlerRegister(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const { email, name }: NewsLetter = req.body;
     const payload: ExtendedNewsLetter = {
@@ -12,6 +13,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     };
     try {
       await createUser("userData", payload);
+      sendSubscriptionEmail(payload.email,payload.name,payload.uuid)
       return res.status(200).send({ email: email, name: name });
     } catch (err) {
        
@@ -19,4 +21,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
   }
 }
-export default handler;
+export default handlerRegister;

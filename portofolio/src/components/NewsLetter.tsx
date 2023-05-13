@@ -24,7 +24,7 @@ export const NewsLetterForm = () => {
       },
     });
     const validator = await response.json();
-    if (validator.status === 200) {
+    if (!validator.err) {
       setSubmitted(true);
     }
   }
@@ -33,7 +33,7 @@ export const NewsLetterForm = () => {
       {submitted ? (
         <div className="mt-6 text-center text-6xl dark:text-light xl:!text-5xl lg:!text-6xl md:!text-5xl sm:!text-3xl">
           Thank you for subscribing! I will keep you updated with the latest
-          news and tips.
+          news and tips. Check your Inbox!
         </div>
       ) : (
         <div className=" flex flex-col justify-center py-12 px-6 lg:px-8">
