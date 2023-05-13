@@ -26,7 +26,7 @@ export const sendSubscriptionEmail = (
   );
   // setup e-mail data, even with unicode symbols
   const mailOptions = {
-    from: '"Vladimir Nitu" <vladimir.nitu.business@outlook.com>', // sender address (who sends)
+    from: `"Vladimir Nitu" <${process.env.EMAIL}>`, // sender address (who sends)
     to: email, // list of receivers (who receives)
     subject: `👋 Welcome to Vladimirs's NewsLetter `, // Subject line
 
