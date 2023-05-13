@@ -1,10 +1,6 @@
+import { Icons } from "@/types/iconType";
 import * as React from "react";
-export interface Icons {
-  props?: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>;
-  className?: string;
-  theme?: "light" | "dark";
-  mobile?: boolean;
-}
+
 export const TwitterIcon = ({ props, className, theme, mobile }: Icons) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

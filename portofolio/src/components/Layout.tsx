@@ -1,9 +1,7 @@
+import { LayoutType } from "@/types/layoutType";
 import React from "react";
 
-interface LayoutType {
-  className?: string;
-  children?: React.ReactNode;
-}
+
 export const Layout  = ({ className, children }:LayoutType) => {
   return (
     <div

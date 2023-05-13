@@ -15,12 +15,7 @@ import {
 import { motion } from "framer-motion";
 import { useThemeSwitcher } from "./hooks/useThemeSwitcher";
 
-interface CustomLinkType {
-  href: string;
-  title: string;
-  className?: string;
-  toggle?: () => void; //for mobile
-}
+
 const CustomLink = ({ href, title, className = "" }: CustomLinkType) => {
   const router = useRouter();
   return (

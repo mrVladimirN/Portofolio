@@ -6,18 +6,10 @@ import Image, { StaticImageData } from "next/image";
 import AI_Image from "../../public/AI_Image.png";
 import { motion, useMotionValue } from "framer-motion";
 import { useRef } from "react";
-interface ArticleType {
-  img: string | StaticImageData;
-  title: string;
-  time: string;
-  summary?: string;
-  link: string;
-}
-interface MovingImageType {
-  img: string | StaticImageData;
-  title: string;
-  link: string;
-}
+import { MovingImageType } from "@/types/animationType";
+import { ArticleType } from "@/types/articleType";
+
+
 const FramerImage = motion(Image);
 const MovingImg  = ({ img, title, link }:MovingImageType) => {
   const x = useMotionValue(0);

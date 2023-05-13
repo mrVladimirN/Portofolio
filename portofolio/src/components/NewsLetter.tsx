@@ -1,9 +1,6 @@
-
+import { NewsLetter } from "@/types/newsLetterType";
 import React, { useRef, useState } from "react";
-export interface NewsLetter {
-  name: string;
-  email: string;
-}
+
 export const NewsLetterForm = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -18,22 +15,25 @@ export const NewsLetterForm = () => {
       email: enteredEmail,
       name: enteredName,
     };
-    setSubmitted(true);
-    const response = await fetch('/api/firebase-write', {
-      method: 'POST',
+
+    const response = await fetch("/api/register", {
+      method: "POST",
       body: JSON.stringify(payload),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
-     await response.json();
+    const validator = await response.json();
+    if (validator.status === 200) {
+      setSubmitted(true);
+    }
   }
   return (
     <>
       {submitted ? (
         <div className="mt-6 text-center text-6xl dark:text-light xl:!text-5xl lg:!text-6xl md:!text-5xl sm:!text-3xl">
-          Thank you for subscribing! I will keep you updated with the latest news
-          and tips.
+          Thank you for subscribing! I will keep you updated with the latest
+          news and tips.
         </div>
       ) : (
         <div className=" flex flex-col justify-center py-12 px-6 lg:px-8">

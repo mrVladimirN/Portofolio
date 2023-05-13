@@ -1,5 +1,6 @@
 import React from "react";
 import { Variants, motion } from "framer-motion";
+import { AnimatedTextType } from "@/types/animationType";
 
 const quote: Variants = {
   initial: {
@@ -26,10 +27,7 @@ const singleWord: Variants = {
     },
   },
 };
-export interface AnimatedTextType {
-  text: string;
-  className?: string;
-}
+
 export const AnimatedText = ({ text, className = "" }: AnimatedTextType) => {
   return (
     <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden sm:py-0">

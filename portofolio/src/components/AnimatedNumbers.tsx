@@ -1,13 +1,11 @@
 import { MutableRefObject, useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-interface AnimatedNumbersType {
-    value:number
-}
-export const AnimatedNumbers = ({ value }:AnimatedNumbersType) => {
+import { AnimatedNumbersType } from "@/types/animationType";
+export const AnimatedNumbers = ({ value }: AnimatedNumbersType) => {
   const ref = useRef<any>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { duration: 2000 });
-  const isInView = useInView(ref, {once:true});
+  const isInView = useInView(ref, { once: true });
   useEffect(() => {
     if (isInView) {
       motionValue.set(value);
@@ -17,7 +15,6 @@ export const AnimatedNumbers = ({ value }:AnimatedNumbersType) => {
     springValue.on("change", (latest) => {
       if (ref.current && latest.toFixed(0) <= value) {
         ref.current.textContent = latest.toFixed(0);
-
       }
     });
   }, [springValue, value]);

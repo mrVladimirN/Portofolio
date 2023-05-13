@@ -2,13 +2,8 @@ import React, { useRef } from "react";
 import { AnimatedText } from "./AnimatedText";
 import { motion, useScroll } from "framer-motion";
 import { LiIcon } from "./Licon";
-interface DetailsEducationType {
-  type: string;
-  time: string;
-  info?: string;
-  grade?: string;
-  place: string;
-}
+import { DetailsEducationType } from "@/types/detailsType";
+ 
 export const DetailsEducation = ({
   type,
   time,

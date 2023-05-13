@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-interface SkillType {
-  name: string;
-  x: string;
-  y: string;
-}
+import { SkillType } from "@/types/skillType";
+
 const Skill = ({ name, x, y }: SkillType) => {
   return (
     <motion.div
