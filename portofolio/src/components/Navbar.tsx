@@ -271,6 +271,9 @@ export const NavBar = () => {
               >
                 <MediumIcon theme={mode} mobile={true}/>
               </motion.a>
+            
+            </nav>
+            <nav className="flex items-center justify-center flex-wrap mt-[10vw]">
               <button
                 onClick={setMode}
                 className="ml-3 flex items-center justify-center rounded-full p-1 "
@@ -284,7 +287,7 @@ export const NavBar = () => {
                   {mode === "dark" ? <SunIcon /> : <DarkMoonIcon />}
                 </motion.a>
               </button>
-            </nav>
+              </nav>
           </motion.div>
         ) : null}
         <div className="absolute left-[50%] top-2 translate-x-[-50%]">
