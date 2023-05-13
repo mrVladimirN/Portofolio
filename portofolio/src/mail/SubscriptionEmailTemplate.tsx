@@ -73,10 +73,10 @@ export const EmailSubscription = ({
   return (
     <Html>
       <Head />
-      <Preview>Vladimir Nitu's Newsletter</Preview>
+      <Preview>Vladimir Nitu&apos;s Newsletter</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Section style={logo}>👋 Welcome to Vladimir's newsletter</Section>
+          <Section style={logo}>👋 Welcome to Vladimir&apos;s newsletter</Section>
           <Section style={sectionsBorders}>
             <Row>
               <Column style={sectionBorder} />
@@ -107,7 +107,7 @@ export const EmailSubscription = ({
               &nbsp;in order to stay connected on all other platforms
             </Text>
             <Text style={paragraph}>
-              Thanks for reading this, I'm glad that you are here.
+              Thanks for reading this, I&apos;m glad that you are here.
               <br />
               Remain curious,
               <br />
