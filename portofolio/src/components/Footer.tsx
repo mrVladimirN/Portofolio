@@ -10,16 +10,16 @@ export const Footer = () => {
         <div className="flex items-center lg:py-2">
           Deployed with
           <span className="text-primary dark:text-primaryDark text-2xl px-1"> &#9825;</span>
-          <a href="https://vercel.com" className="underline underline-offset-2">
-            Vercel
+          <a href="https://github.com" className="underline underline-offset-2">
+            Github
           </a>
         </div>
-        <Link
+        {/* <Link
           href="/newsletter"
           className="underline underline-offset-2"
         >
           Newsletter
-        </Link>
+        </Link> */}
       </Layout>
     </footer>
   );

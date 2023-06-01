@@ -95,11 +95,11 @@ export const NavBar = () => {
           <nav>
             <CustomLink href="/" title="Home" className="mr-4" />
             <CustomLink href="/about" title="About" className="mr-4" />
-            <CustomLink
+            {/* <CustomLink
               href="/newsletter"
               title="Newsletter"
               className="mr-4"
-            />
+            /> */}
           </nav>
           <nav className="flex items-center justify-center flex-wrap">
             <motion.a
@@ -204,12 +204,12 @@ export const NavBar = () => {
                 className=" "
                 toggle={handleClick}
               />
-              <CustomMobileLink
+              {/* <CustomMobileLink
                 href="/newsletter"
                 title="Newsletter"
                 className=" "
                 toggle={handleClick}
-              />
+              /> */}
             </nav>
             <nav className="flex items-center justify-center flex-wrap mt-[10vw]">
               <motion.a
